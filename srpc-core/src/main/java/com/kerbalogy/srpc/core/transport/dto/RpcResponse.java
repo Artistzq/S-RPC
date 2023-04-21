@@ -1,6 +1,6 @@
 package com.kerbalogy.srpc.core.transport.dto;
 
-import com.kerbalogy.srpc.core.enums.RpcResponseCodeEnum;
+import com.kerbalogy.srpc.enums.RpcResponseCodeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

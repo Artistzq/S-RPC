@@ -13,6 +13,8 @@
         <module>srpc-common</module>
         <module>local</module>
         <module>server</module>
+        <module>srpc-service</module>
+        <module>srpc-transport</module>
     </modules>
 
     <properties>

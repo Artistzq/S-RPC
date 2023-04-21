@@ -1,11 +1,12 @@
 package client;
 
-import com.kerbalogy.srpc.core.config.RpcServiceConfig;
-import com.kerbalogy.srpc.core.proxy.RpcClientProxy;
-import com.kerbalogy.srpc.core.transport.client.RpcClient;
-import com.kerbalogy.srpc.core.transport.client.socket.SocketRpcClient;
-import com.kerbalogy.srpc.server.service.Message;
-import com.kerbalogy.srpc.server.service.TestService;
+import com.kerbalogy.srpc.config.RpcServiceConfig;
+import com.kerbalogy.srpc.core.client.proxy.RpcClientProxy;
+import com.kerbalogy.srpc.core.client.RpcClient;
+import com.kerbalogy.srpc.core.client.socket.SocketRpcClient;
+
+import com.kerbalogy.test.service.Message;
+import com.kerbalogy.test.service.TestService;
 
 /**
  * @Author : Artis Yao

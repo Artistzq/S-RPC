@@ -16,6 +16,8 @@
     <bytecodeTargetLevel>
       <module name="common" target="17" />
       <module name="core" target="17" />
+      <module name="srpc-service" target="17" />
+      <module name="srpc-transport" target="17" />
       <module name="user" target="17" />
     </bytecodeTargetLevel>
   </component>

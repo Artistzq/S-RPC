@@ -1,6 +1,6 @@
 package com.kerbalogy.srpc.core.registry.localImpl;
 
-import com.kerbalogy.srpc.core.constant.TransportConstant;
+import com.kerbalogy.srpc.constant.TransportConstant;
 import com.kerbalogy.srpc.core.registry.ServiceDiscovery;
 import com.kerbalogy.srpc.core.transport.dto.RpcRequest;
 
