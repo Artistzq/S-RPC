@@ -1,4 +1,4 @@
-package com.kerbalogy.srpc.core.registry.localImpl;
+package com.kerbalogy.srpc.core.registry.local;
 
 import com.kerbalogy.srpc.core.registry.ServiceRegistry;
 
@@ -25,7 +25,7 @@ public class LocalServiceRegistry implements ServiceRegistry {
     }
 
     @Override
-    public void clearRegistry() {
+    public void clearAllRegistry() {
         this.container.clear();
     }
 }

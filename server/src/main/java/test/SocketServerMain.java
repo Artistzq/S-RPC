@@ -1,9 +1,9 @@
-package com.kerbalogy.test;
+package test;
 
 import com.kerbalogy.srpc.config.RpcServiceConfig;
 import com.kerbalogy.srpc.core.server.socket.SocketRpcServer;
-import com.kerbalogy.test.service.TestService;
-import com.kerbalogy.test.service.TestServiceImpl;
+import test.service.TestService;
+import test.service.TestServiceImpl;
 
 /**
  * @Author : Artis Yao
@@ -18,10 +18,12 @@ public class SocketServerMain {
     public static SocketRpcServer initServices() {
 
         TestService helloService = new TestServiceImpl();
-        SocketRpcServer socketRpcServer = new SocketRpcServer();
+        SocketRpcServer socketRpcServer = new SocketRpcServer(10086);
+
         // config是对service的封装
         RpcServiceConfig config = new RpcServiceConfig();
         config.setService(helloService);
+
         socketRpcServer.registerService(config);
 
         return socketRpcServer;

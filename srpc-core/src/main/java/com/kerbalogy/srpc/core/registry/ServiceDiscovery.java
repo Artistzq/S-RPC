@@ -11,7 +11,7 @@ public interface ServiceDiscovery {
 
     /**
      * Lookup service by rpcServiceName
-     * @param rpcRequest rpc service pojo
+     * @param rpcRequest rpc 请求
      * @return service address
      */
     InetSocketAddress lookupService(RpcRequest rpcRequest);

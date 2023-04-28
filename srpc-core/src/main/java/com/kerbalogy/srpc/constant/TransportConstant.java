@@ -11,4 +11,7 @@ public class TransportConstant {
 
     public static InetSocketAddress LOCAL_SERVER_ADDRESS = new InetSocketAddress("127.0.0.1", LOCAL_SERVER_PORT);
 
+    public static int NETTY_SERVER_PORT = 9998;
+
+    public static InetSocketAddress NETTY_SERVER_ADDRESS = new InetSocketAddress("127.0.0.1", NETTY_SERVER_PORT);
 }

@@ -1,9 +1,10 @@
 package com.kerbalogy.srpc.core.client.socket;
 
 import com.kerbalogy.srpc.common.factory.SingletonFactory;
+import com.kerbalogy.srpc.core.registry.zookeeper.ZKServiceDiscovery;
 import com.kerbalogy.srpc.exception.RpcException;
 import com.kerbalogy.srpc.core.registry.ServiceDiscovery;
-import com.kerbalogy.srpc.core.registry.localImpl.LocalServiceDiscovery;
+import com.kerbalogy.srpc.core.registry.local.LocalServiceDiscovery;
 import com.kerbalogy.srpc.core.client.RpcClient;
 import com.kerbalogy.srpc.core.transport.dto.RpcRequest;
 import com.kerbalogy.srpc.core.transport.dto.RpcResponse;
@@ -25,7 +26,7 @@ public class SocketRpcClient implements RpcClient {
 
     public SocketRpcClient() {
 //        this.serviceDiscovery = ExtensionLoader.getExtensionLoader(ServiceDiscovery.class).getExtension()
-        this.serviceDiscovery = SingletonFactory.getInstance(LocalServiceDiscovery.class);
+        this.serviceDiscovery = SingletonFactory.getInstance(ZKServiceDiscovery.class);
     }
 
     @Override

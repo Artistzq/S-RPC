@@ -26,7 +26,7 @@ public class RpcServiceConfig {
     private String group = "";
 
     /**
-     * Target service. Is Usually a Interface.
+     * Target service. Is Usually an implement instance object of an interface.
      */
     private Object service;
 
@@ -34,7 +34,7 @@ public class RpcServiceConfig {
      * TODO
      * @return
      */
-    public String getRpcServiceName() {
+    public String getFullServiceName() {
         return this.getServiceName() + this.getGroup() + this.getVersion();
     }
 

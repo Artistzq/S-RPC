@@ -2,6 +2,7 @@ package com.kerbalogy.srpc.config;
 
 import com.kerbalogy.srpc.common.factory.SingletonFactory;
 import com.kerbalogy.srpc.constant.TransportConstant;
+import com.kerbalogy.srpc.core.server.provider.AbstractServiceProvider;
 import com.kerbalogy.srpc.core.server.provider.ServiceProvider;
 import lombok.extern.slf4j.Slf4j;
 
@@ -24,25 +25,17 @@ public class ShutdownHook {
         return SHUTDOWN_HOOK;
     }
 
-    public void clearAll() {
-        log.info("add shutdown hook for clear all.");
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            try {
-                InetSocketAddress inetSocketAddress = new InetSocketAddress(
-                        InetAddress.getLocalHost().getHostAddress(), TransportConstant.LOCAL_SERVER_PORT);
-            } catch (UnknownHostException e) {
-                e.printStackTrace();
-            }
-        }));
-    }
-
+    /**
+     * 清除注册中心的所有注册
+     * @param clazz
+     */
     public void clearAll(Class<? extends ServiceProvider> clazz) {
         log.info("add shutdown hook for clear all for {}.", clazz.getName());
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             try {
                 InetSocketAddress inetSocketAddress = new InetSocketAddress(
                         InetAddress.getLocalHost().getHostAddress(), TransportConstant.LOCAL_SERVER_PORT);
-                SingletonFactory.getInstance(clazz).getServiceRegistry().clearRegistry();
+                SingletonFactory.getInstance(clazz).getServiceRegistry().clearAllRegistry();
             } catch (UnknownHostException e) {
                 e.printStackTrace();
             }

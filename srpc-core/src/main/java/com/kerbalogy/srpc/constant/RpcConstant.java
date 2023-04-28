@@ -9,5 +9,6 @@ public class RpcConstant {
 
     public static final byte VERSION = 1;
 
+    public static final int MAX_FRAME_LENGTH = 8 * 1024 * 1024;
 
 }

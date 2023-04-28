@@ -1,6 +1,7 @@
-package com.kerbalogy.srpc.core.server.handler;
+package com.kerbalogy.srpc.core.server;
 
 import com.kerbalogy.srpc.common.factory.SingletonFactory;
+import com.kerbalogy.srpc.core.server.provider.ZKServiceProvider;
 import com.kerbalogy.srpc.exception.RpcException;
 import lombok.extern.slf4j.Slf4j;
 import com.kerbalogy.srpc.core.server.provider.LocalServiceProvider;
@@ -20,7 +21,7 @@ public class RpcRequestHandler {
 
     public RpcRequestHandler() {
         // 本地Provider测试
-        this.serviceProvider = SingletonFactory.getInstance(LocalServiceProvider.class);
+        this.serviceProvider = SingletonFactory.getInstance(ZKServiceProvider.class);
     }
 
     /**

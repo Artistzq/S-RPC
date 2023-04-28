@@ -1,4 +1,4 @@
-package com.kerbalogy.srpc.core.registry.localImpl;
+package com.kerbalogy.srpc.core.registry.local;
 
 import com.kerbalogy.srpc.constant.TransportConstant;
 import com.kerbalogy.srpc.core.registry.ServiceDiscovery;

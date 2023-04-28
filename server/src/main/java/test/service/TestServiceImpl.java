@@ -1,4 +1,4 @@
-package com.kerbalogy.test.service;
+package test.service;
 
 import lombok.extern.slf4j.Slf4j;
 

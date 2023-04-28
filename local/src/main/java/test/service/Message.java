@@ -1,4 +1,4 @@
-package com.kerbalogy.test.service;
+package test.service;
 
 import lombok.*;
 
