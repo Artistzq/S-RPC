@@ -1,12 +1,8 @@
-package client;
-
+import com.kerbalogy.srpc.api.services.TimeService;
 import com.kerbalogy.srpc.config.RpcServiceConfig;
-import com.kerbalogy.srpc.core.client.proxy.RpcClientProxy;
 import com.kerbalogy.srpc.core.client.RpcClient;
+import com.kerbalogy.srpc.core.client.proxy.RpcClientProxy;
 import com.kerbalogy.srpc.core.client.socket.SocketRpcClient;
-
-import test.service.Message;
-import test.service.TestService;
 
 /**
  * @Author : Artis Yao
@@ -18,12 +14,9 @@ public class SocketClientMain {
         RpcServiceConfig rpcServiceConfig = new RpcServiceConfig();
         RpcClientProxy rpcClientProxy = new RpcClientProxy(rpcClient, rpcServiceConfig);
 
-        TestService service = rpcClientProxy.getProxy(TestService.class);
+        TimeService service = rpcClientProxy.getProxy(TimeService.class);
 
-        String res = service.hello(new Message("1", "2"));
-        System.out.println(res);
-        res = service.cat(new Message("666", "777"));
-        System.out.println(res);
+        System.out.println(service.getCurrentTime());
     }
 
 }

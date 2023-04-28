@@ -2,7 +2,6 @@ package com.kerbalogy.srpc.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
 /**
  * @Author : Artis Yao

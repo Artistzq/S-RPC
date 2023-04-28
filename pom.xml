@@ -13,6 +13,9 @@
         <module>srpc-common</module>
         <module>local</module>
         <module>server</module>
+        <module>srpc-api</module>
+        <module>srpc-provider</module>
+        <module>srpc-consumer</module>
     </modules>
 
     <properties>
