@@ -1,6 +1,7 @@
 package com.kerbalogy.srpc.core.client.socket;
 
 import com.kerbalogy.srpc.common.factory.SingletonFactory;
+import com.kerbalogy.srpc.core.registry.redis.RedisServiceDiscovery;
 import com.kerbalogy.srpc.core.registry.zookeeper.ZKServiceDiscovery;
 import com.kerbalogy.srpc.exception.RpcException;
 import com.kerbalogy.srpc.core.registry.ServiceDiscovery;
@@ -15,6 +16,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Author : Artis Yao
@@ -24,9 +27,28 @@ public class SocketRpcClient implements RpcClient {
 
     private final ServiceDiscovery serviceDiscovery;
 
+    private static final Map<String, Class<? extends ServiceDiscovery>> discoveries;
+
+    static {
+        discoveries = new HashMap<>();
+        discoveries.put("redis", RedisServiceDiscovery.class);
+        discoveries.put("zk", ZKServiceDiscovery.class);
+        discoveries.put("local", LocalServiceDiscovery.class);
+    }
+
+    @Deprecated
     public SocketRpcClient() {
-//        this.serviceDiscovery = ExtensionLoader.getExtensionLoader(ServiceDiscovery.class).getExtension()
+        log.warn("Not specify Discovery. Use ZooKeeper Discovery default.");
         this.serviceDiscovery = SingletonFactory.getInstance(ZKServiceDiscovery.class);
+    }
+
+    public SocketRpcClient(String discovery) {
+        if (! discoveries.containsKey(discovery)) {
+            log.warn("Not found correspond Discovery. Use ZooKeeper Discovery default.");
+            this.serviceDiscovery = SingletonFactory.getInstance(ZKServiceDiscovery.class);
+        } else {
+            this.serviceDiscovery = SingletonFactory.getInstance(discoveries.get(discovery));
+        }
     }
 
     @Override

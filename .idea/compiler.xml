@@ -7,18 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="server" />
-        <module name="srpc-provider" />
         <module name="srpc-api" />
         <module name="srpc-common" />
+        <module name="srpc-provider" />
         <module name="srpc-core" />
         <module name="srpc-consumer" />
-        <module name="local" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common" target="17" />
       <module name="core" target="17" />
+      <module name="local" target="17" />
+      <module name="server" target="17" />
       <module name="srpc-service" target="17" />
       <module name="srpc-transport" target="17" />
       <module name="user" target="17" />

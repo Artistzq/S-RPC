@@ -3,6 +3,8 @@ package com.kerbalogy.srpc.core.server.provider;
 import com.kerbalogy.srpc.config.RpcServiceConfig;
 import com.kerbalogy.srpc.core.registry.ServiceRegistry;
 
+import java.util.Map;
+
 /**
  * 存储并提供服务的Object
  * @Author : Artis Yao

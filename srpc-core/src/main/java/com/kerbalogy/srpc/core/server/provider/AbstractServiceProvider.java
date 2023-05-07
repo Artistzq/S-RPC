@@ -3,11 +3,8 @@ package com.kerbalogy.srpc.core.server.provider;
 import com.kerbalogy.srpc.config.RpcServiceConfig;
 import com.kerbalogy.srpc.constant.TransportConstant;
 import com.kerbalogy.srpc.core.registry.ServiceRegistry;
-import com.kerbalogy.srpc.core.registry.local.LocalServiceRegistry;
-import com.kerbalogy.srpc.core.registry.zookeeper.ZKServiceRegistry;
 import lombok.extern.slf4j.Slf4j;
 
-import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.Map;
 import java.util.Set;
@@ -63,6 +60,7 @@ public abstract class AbstractServiceProvider implements ServiceProvider {
     @Override
     public void publishService(RpcServiceConfig rpcServiceConfig) {
         this.addService(rpcServiceConfig);
+        // TODO: 换成当前的公网或局域网IP而不是本机地址
         String host = "127.0.0.1";
         serviceRegistry.registerService(rpcServiceConfig.getServiceName(), new InetSocketAddress(host, TransportConstant.NETTY_SERVER_PORT));
     }

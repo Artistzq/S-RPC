@@ -6,6 +6,7 @@ import com.kerbalogy.srpc.config.RpcServiceConfig;
 import com.kerbalogy.srpc.config.ShutdownHook;
 import com.kerbalogy.srpc.constant.TransportConstant;
 import com.kerbalogy.srpc.core.server.RpcServer;
+import com.kerbalogy.srpc.core.server.provider.RedisServiceProvider;
 import com.kerbalogy.srpc.core.server.provider.ServiceProvider;
 import com.kerbalogy.srpc.core.server.provider.ZKServiceProvider;
 import lombok.extern.slf4j.Slf4j;
@@ -33,13 +34,13 @@ public class SocketRpcServer implements RpcServer {
     public SocketRpcServer(int port) {
         this.port = port;
         this.threadPool = ThreadPoolFactoryUtil.createCustomThreadPoolIfAbsent("socket-server-rpc-pool");
-        this.serviceProvider = SingletonFactory.getInstance(ZKServiceProvider.class);
+        this.serviceProvider = SingletonFactory.getInstance(RedisServiceProvider.class);
     }
 
     public SocketRpcServer() {
         this.port = TransportConstant.NETTY_SERVER_PORT;
         this.threadPool = ThreadPoolFactoryUtil.createCustomThreadPoolIfAbsent("socket-server-rpc-pool");
-        this.serviceProvider = SingletonFactory.getInstance(ZKServiceProvider.class);
+        this.serviceProvider = SingletonFactory.getInstance(RedisServiceProvider.class);
     }
 
     @Override

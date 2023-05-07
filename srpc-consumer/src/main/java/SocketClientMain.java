@@ -10,7 +10,7 @@ import com.kerbalogy.srpc.core.client.socket.SocketRpcClient;
 public class SocketClientMain {
 
     public static void main(String[] args) {
-        RpcClient rpcClient = new SocketRpcClient();
+        RpcClient rpcClient = new SocketRpcClient("redis");
         RpcServiceConfig rpcServiceConfig = new RpcServiceConfig();
         RpcClientProxy rpcClientProxy = new RpcClientProxy(rpcClient, rpcServiceConfig);
 

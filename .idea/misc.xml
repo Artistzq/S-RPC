@@ -11,6 +11,8 @@
       <set>
         <option value="$PROJECT_DIR$/common/pom.xml" />
         <option value="$PROJECT_DIR$/core/pom.xml" />
+        <option value="$PROJECT_DIR$/local/pom.xml" />
+        <option value="$PROJECT_DIR$/server/pom.xml" />
         <option value="$PROJECT_DIR$/srpc-service/pom.xml" />
         <option value="$PROJECT_DIR$/srpc-transport/pom.xml" />
         <option value="$PROJECT_DIR$/user/pom.xml" />
